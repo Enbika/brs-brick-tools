@@ -1,0 +1,21 @@
+{
+  "name": "brs-brick-tools",
+  "version": "1.0.0",
+  "description": "Tools to analyze BRS files.",
+  "main": "randomBrick.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erika",
+  "license": "ISC",
+  "dependencies": {
+    "brs-js": "^2.0.13"
+  },
+  "bin": {
+    "brs-random-brick": "./randomBrick.js",
+    "brs-list-bricks": "./listBricks.js",
+    "brs-far-bricks": "./farBricks.js",
+    "brs-component-list": "./componentList.js",
+    "brs-component-count": "./componentCount.js"
+  }
+}
