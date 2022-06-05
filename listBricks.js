@@ -16,10 +16,8 @@ if(myArgs[1] == undefined) {
 
 const file = path.resolve(myArgs[0]);
 const buffer = fs.readFileSync(file);
-var loadDate = new Date();
 process.stdout.write("Loading save, please wait... ");
 const save = brs.read(buffer);
-var loadedDate = new Date();
 console.log(`${save.brick_count} bricks loaded.`);
 
 var owner_index = -1;
