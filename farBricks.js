@@ -21,14 +21,14 @@ const save = brs.read(buffer);
 console.log(`${save.brick_count} bricks loaded.`);
 
 var farBricks = 0;
-for(i=0; i < save.brick_count; i++) {
-	var brick = save.bricks[i];
+save.bricks.forEach((brick) => {
 	if(Math.abs(brick.position[0]) > distance || Math.abs(brick.position[1]) > distance || Math.abs(brick.position[2]) > distance) {
 		if(farBricks == 0) fs.writeFileSync("farbricks.txt","");
 		fs.appendFileSync("farbricks.txt",`${brick.position[0]} ${brick.position[1]} ${brick.position[2]}, owned by ${save.brick_owners[brick.owner_index-1].name}\n`);
 		farBricks++;
 	}
-}
+});
+
 if(farBricks > 0) 
 	console.log(`Wrote ${farBricks} bricks to farbricks.txt.`);
 else

@@ -16,13 +16,14 @@ process.stdout.write("Loading save, please wait... ");
 const save = brs.read(buffer);
 console.log(`${save.brick_count} bricks loaded.`);
 
+var newSave = save;
 var cubes = 0;
 var plates = 0;
-for(i=0; i < save.brick_count; i++) {
-	var brick = save.bricks[i];
+save.bricks.forEach((brick) => {
 	if(save.brick_assets[brick.asset_name_index] == "PB_DefaultBrick" && brick.size[0] % 20 == 0 && brick.size[1] % 20 == 0 && brick.size[2] % 20 == 0)
 		cubes++;
-	if(save.brick_assets[brick.asset_name_index] == "PB_DefaultBrick" && brick.size[0] % 20 == 0 && brick.size[1] % 20 == 0 && brick.size[2] == 2)
+	else if(save.brick_assets[brick.asset_name_index] == "PB_DefaultBrick" && brick.size[0] % 20 == 0 && brick.size[1] % 20 == 0 && brick.size[2] == 2)
 		plates++;
-}
+});
+
 console.log(`Cube count: ${cubes}\nPlate count: ${plates}\nTotal terrain: ${cubes + plates}`);

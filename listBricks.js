@@ -32,8 +32,8 @@ else {
 	const owned_bricks = save.bricks.filter(obj => { return obj.owner_index == owner_index + 1});
 	
 	fs.writeFileSync(`bricks_${save.brick_owners[owner_index].id}.txt`,""); // blank out file
-	for(i=0; i < save.brick_owners[owner_index].bricks; i++) {
+	owned_bricks.forEach((element, i) => {
 		fs.appendFileSync(`bricks_${save.brick_owners[owner_index].id}.txt`,`${owned_bricks[i].position[0]} ${owned_bricks[i].position[1]} ${owned_bricks[i].position[2]}\n`);
-	}
+	});
 	console.log(`Wrote ${save.brick_owners[owner_index].bricks} bricks to bricks_${save.brick_owners[owner_index].id}.txt`);
 }
