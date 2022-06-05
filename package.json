@@ -1,6 +1,6 @@
 {
   "name": "brs-brick-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tools to analyze BRS files.",
   "main": "randomBrick.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "brs-list-bricks": "./listBricks.js",
     "brs-far-bricks": "./farBricks.js",
     "brs-component-list": "./componentList.js",
-    "brs-component-count": "./componentCount.js"
+    "brs-component-count": "./componentCount.js",
+    "brs-cube-count": "./cubeCount.js"
   }
 }
