@@ -10,10 +10,6 @@ if(myArgs[0] == undefined) {
 	return;
 }
 
-var distance = 10000; // default to 10k units (or 1k studs)
-if(myArgs[1] !== undefined)
-	distance = Math.abs(Number(myArgs[1]));
-
 const file = path.resolve(myArgs[0]);
 const buffer = fs.readFileSync(file);
 const save = brs.read(buffer);
