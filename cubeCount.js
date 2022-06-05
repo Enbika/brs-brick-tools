@@ -16,7 +16,6 @@ process.stdout.write("Loading save, please wait... ");
 const save = brs.read(buffer);
 console.log(`${save.brick_count} bricks loaded.`);
 
-var newSave = save;
 var cubes = 0;
 var plates = 0;
 save.bricks.forEach((brick) => {
